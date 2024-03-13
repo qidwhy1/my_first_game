@@ -42,6 +42,7 @@ while run:
     if block_falling:
         block_y += block_speed
 
+
         upper_block = pygame.Rect(tower[-1 ][0], tower[-1][1], block_width, block_height)
         if pygame.Rect(block_x, block_y, block_width, block_height).colliderect(upper_block):
             block_falling = False
@@ -75,7 +76,8 @@ while run:
         screen.blit(block_image, (block[0], block[1]))
     screen.blit(block_image,(block_x, block_y))
 
-
+    score_label = font.render(f"Score: {score}", True, Black)
+    screen.blit(score_label, (20, 20))
 
     pygame.display.flip()
     clock.tick(FPS)
